@@ -48,5 +48,9 @@ def predict():
 
     return jsonify({"predicted_crime": predicted_crime})
 
+@app.route("/", methods=["GET"])
+def home():
+    return "Crime Mapping 360 API is running. Use /predict with a POST request."
+
 if __name__ == "__main__":
     app.run(debug=True)
