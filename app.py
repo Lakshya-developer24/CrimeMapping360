@@ -1,4 +1,4 @@
-from flask import Flask, request, jsonify
+from flask import Flask, request, jsonify,render_template
 import joblib
 import numpy as np
 
@@ -50,7 +50,7 @@ def predict():
 
 @app.route("/", methods=["GET"])
 def home():
-    return "Crime Mapping 360 API is running. Use /predict with a POST request."
+    return render_template("index.html")
 
 if __name__ == "__main__":
     app.run(debug=True)
